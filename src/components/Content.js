@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   position: relative;
   z-index: 2;
   width: 65%;
@@ -14,8 +14,8 @@ const Wrapper = styled.div`
 `;
 
 const Heading = styled.h1`
-  padding-top: 9rem;
-  font-size: 3.5em;
+  padding-top: 0.8em;
+  font-size: 3.2em;
 `;
 
 const Paragraph = styled.p`
@@ -53,18 +53,25 @@ const Input = styled.input`
   }
 `;
 
-function Content() {
-  return (
-    <Wrapper>
-      <Heading>Gurajmesu Search</Heading>
-      <Paragraph>
-        Najlepsza wyszukiwarka tekstów utworów autorstwa Grimes.
-      </Paragraph>
-      <form action="#">
-        <Input type="text" placeholder="Tytuł utworu:" />
-      </form>
-    </Wrapper>
-  );
+class Content extends Component {
+  onSubmit = e => {
+    e.preventDefault();
+    this.props.onSubmit();
+  };
+
+  render() {
+    return (
+      <StyledWrapper>
+        <Heading>Gurajmesu Search</Heading>
+        <Paragraph>
+          Najlepsza wyszukiwarka tekstów utworów autorstwa Grimes.
+        </Paragraph>
+        <form onSubmit={this.onSubmit}>
+          <Input type="text" placeholder="Tytuł utworu:" />
+        </form>
+      </StyledWrapper>
+    );
+  }
 }
 
 export default Content;
