@@ -33,6 +33,8 @@ const Input = styled.input`
   margin-top: 3em;
   text-align: center;
   padding-bottom: 0.2em;
+  margin-bottom: 2em;
+  width: 100%;
 
   &::placeholder {
     color: hsl(0, 100%, 100%);

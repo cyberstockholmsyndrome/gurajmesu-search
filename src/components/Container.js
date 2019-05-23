@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   padding: 0;
   margin: 0 auto;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   &::after {
     content: "";

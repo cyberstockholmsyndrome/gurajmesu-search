@@ -9,11 +9,6 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   font-family: "Montserrat";
   -webkit-font-smoothing: antialiased;
