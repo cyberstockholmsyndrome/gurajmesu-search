@@ -1,3 +1,3 @@
-Gurajmesu Search
+# Gurajmesu Search
 
-Najlepsza wyszukiwarka tekstów piosenek autorstwa Grimes.
+Najlepsza wyszukiwarka tekstów utworów autorstwa Grimes.
