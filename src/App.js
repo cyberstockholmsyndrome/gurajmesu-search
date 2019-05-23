@@ -1,8 +1,13 @@
-import React from 'react';
+import React from "react";
+
+import Container from "../src/components/Container";
+import Layout from "../src/layout/Layout";
 
 function App() {
   return (
-    <h1>Gurajmesu Search</h1>
+    <Layout>
+      <Container />
+    </Layout>
   );
 }
 
