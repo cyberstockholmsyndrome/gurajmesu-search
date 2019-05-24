@@ -33,6 +33,7 @@ const Icon = styled.span`
   right: 0.4em;
   font-size: 2.85em;
   padding: 0.25em;
+  cursor: pointer;
 `;
 
 const ModalHeading = styled.h1`
