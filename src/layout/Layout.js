@@ -35,11 +35,11 @@ body {
 }
 
 ::selection {
-  background: #F58092;
+  background: #ff8ce8;
 }
 
 ::-moz-selection {
-  background: #F58092;
+  background: #ff8ce8;
 }
 `;
 
