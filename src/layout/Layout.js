@@ -33,6 +33,14 @@ body {
 ::-webkit-scrollbar {
   width: 0 !important
 }
+
+::selection {
+  background: #F58092;
+}
+
+::-moz-selection {
+  background: #F58092;
+}
 `;
 
 const Layout = ({ children }) => (
