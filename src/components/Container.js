@@ -30,21 +30,36 @@ const StyledWrapper = styled.div`
 const Icon = styled.span`
   position: absolute;
   top: 0.2em;
-  right: 0.4em;
+  right: 0.5em;
   font-size: 2.85em;
   padding: 0.25em;
   cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 `;
 
 const ModalHeading = styled.h1`
   position: absolute;
-  top: 3em;
+  top: 2em;
   right: 50%;
   transform: translateX(50%);
+  font-size: 3em;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 5em;
+    top: 1.5em;
+  }
 `;
 
 const ModalText = styled.p`
   margin-top: 10em;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 2em;
+    width: 75%;
+    text-align: center;
+    display: inline-block;
+  }
 `;
 
 class Container extends Component {
@@ -78,7 +93,7 @@ class Container extends Component {
             content: {
               backgroundColor: "#61449C",
               border: "none",
-              borderRadius: "30px"
+              borderRadius: "36px"
             }
           }}
           closeTimeoutMS={500}

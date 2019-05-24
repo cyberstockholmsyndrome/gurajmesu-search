@@ -16,11 +16,21 @@ const StyledWrapper = styled.div`
 const Heading = styled.h1`
   padding-top: 0.8em;
   font-size: 3.2em;
+
+  @media only screen and (min-width: 768px) {
+    padding-top: 3em;
+    font-size: 4.5em;
+  }
 `;
 
 const Paragraph = styled.p`
   padding-top: 2em;
   font-size: 2em;
+
+  @media only screen and (min-width: 768px) {
+    padding-top: 3em;
+    font-size: 2.5em;
+  }
 `;
 
 const Input = styled.input`
@@ -49,7 +59,12 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-bottom: 2px solid hsl(189, 100%, 50%);
+    border-bottom: 2px solid hsla(176, 94%, 41%, 1);
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin-top: 5em;
+    font-size: 2.5em;
   }
 `;
 
