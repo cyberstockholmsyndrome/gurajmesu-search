@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
@@ -68,25 +68,23 @@ const Input = styled.input`
   }
 `;
 
-class Content extends Component {
-  onSubmit = e => {
+function Content(props) {
+  const handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit();
+    props.onSubmit();
   };
 
-  render() {
-    return (
-      <StyledWrapper>
-        <Heading>Gurajmesu Search</Heading>
-        <Paragraph>
-          Najlepsza wyszukiwarka tekstów utworów autorstwa Grimes.
-        </Paragraph>
-        <form onSubmit={this.onSubmit}>
-          <Input type="text" placeholder="Tytuł utworu:" />
-        </form>
-      </StyledWrapper>
-    );
-  }
+  return (
+    <StyledWrapper>
+      <Heading>Gurajmesu Search</Heading>
+      <Paragraph>
+        Najlepsza wyszukiwarka tekstów utworów autorstwa Grimes.
+      </Paragraph>
+      <form onSubmit={handleSubmit}>
+        <Input type="text" placeholder="Tytuł utworu:" />
+      </form>
+    </StyledWrapper>
+  );
 }
 
 export default Content;

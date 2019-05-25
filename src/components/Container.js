@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import ReactModal from "react-modal";
 
@@ -62,66 +62,58 @@ const ModalText = styled.p`
   }
 `;
 
-class Container extends Component {
-  constructor() {
-    super();
-    this.state = {
-      showModal: false
-    };
-  }
+function Container() {
+  const [showModal, setShowModal] = useState(false);
 
-  handleOpenModal = () => {
-    this.setState({ showModal: true });
+  const handleOpenModal = () => {
+    setShowModal(true);
   };
 
-  handleCloseModal = () => {
-    this.setState({ showModal: false });
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
-  render() {
-    return (
-      <StyledWrapper>
-        <Content onSubmit={this.handleOpenModal} />
-        <ReactModal
-          isOpen={this.state.showModal}
-          contentLabel="Song Text"
-          style={{
-            overlay: {
-              zIndex: "2",
-              backgroundColor: "hsla(0, 0%, 0%, 0.6) "
-            },
-            content: {
-              backgroundColor: "#61449C",
-              border: "none",
-              borderRadius: "36px"
-            }
-          }}
-          closeTimeoutMS={500}
-          onRequestClose={this.handleCloseModal}
-          shouldCloseOnOverlayClick={true}
-        >
-          <Icon onClick={this.handleCloseModal}>
-            <i className="fas fa-times" />
-          </Icon>
-          <ModalHeading>Oblivion</ModalHeading>
-          <ModalText>
-            Another walk about, after dark It's my point of view If someone
-            could break your neck Coming up behind you always coming and you'd
-            never have a clue And now I'm left behind, all the time I will wait
-            forever, always looking straight Thinking, counting, all the hours
-            you wait See you on a dark night See you on a dark night See you on
-            a dark night See you on a dark night And now another clue, I would
-            ask If you could help me out It's hard to understand Cause when
-            you're really by yourself It's hard to find someone to hold your
-            hand And now it's gonna be, tough on me But I will wait forever I
-            need someone now to look into my eyes and tell me Girl you know you
-            gotta watch your health To look into my eyes and tell me La la la la
-            la To look…
-          </ModalText>
-        </ReactModal>
-      </StyledWrapper>
-    );
-  }
+  return (
+    <StyledWrapper>
+      <Content onSubmit={handleOpenModal} />
+      <ReactModal
+        isOpen={showModal}
+        contentLabel="Song Text"
+        style={{
+          overlay: {
+            zIndex: "2",
+            backgroundColor: "hsla(0, 0%, 0%, 0.6) "
+          },
+          content: {
+            backgroundColor: "#61449C",
+            border: "none",
+            borderRadius: "36px"
+          }
+        }}
+        closeTimeoutMS={500}
+        onRequestClose={handleCloseModal}
+        shouldCloseOnOverlayClick={true}
+      >
+        <Icon onClick={handleCloseModal}>
+          <i className="fas fa-times" />
+        </Icon>
+        <ModalHeading>Oblivion</ModalHeading>
+        <ModalText>
+          Another walk about, after dark It's my point of view If someone could
+          break your neck Coming up behind you always coming and you'd never
+          have a clue And now I'm left behind, all the time I will wait forever,
+          always looking straight Thinking, counting, all the hours you wait See
+          you on a dark night See you on a dark night See you on a dark night
+          See you on a dark night And now another clue, I would ask If you could
+          help me out It's hard to understand Cause when you're really by
+          yourself It's hard to find someone to hold your hand And now it's
+          gonna be, tough on me But I will wait forever I need someone now to
+          look into my eyes and tell me Girl you know you gotta watch your
+          health To look into my eyes and tell me La la la la la To look…
+        </ModalText>
+      </ReactModal>
+    </StyledWrapper>
+  );
 }
 
 export default Container;
