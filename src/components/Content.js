@@ -17,7 +17,7 @@ const Heading = styled.h1`
   padding-top: 0.8em;
   font-size: 3.2em;
 
-  @media only screen and (min-width: 768px) {
+  ${({ theme }) => theme.media.desktop} {
     padding-top: 3em;
     font-size: 4.5em;
   }
@@ -27,7 +27,7 @@ const Paragraph = styled.p`
   padding-top: 2em;
   font-size: 2em;
 
-  @media only screen and (min-width: 768px) {
+  ${({ theme }) => theme.media.desktop} {
     padding-top: 3em;
     font-size: 2.5em;
   }
@@ -38,7 +38,7 @@ const Input = styled.input`
   border-bottom: 2px solid hsl(0, 100%, 100%);
   font-size: 1.6em;
   color: hsl(0, 100%, 100%);
-  font-family: "Montserrat";
+  font-family: ${({ theme }) => theme.font.primary};
   background-color: transparent;
   margin-top: 3em;
   text-align: center;
@@ -49,7 +49,7 @@ const Input = styled.input`
   &::placeholder {
     color: hsl(0, 100%, 100%);
     transition: transform 0.4s ease-out, opacity 0.5s ease-in;
-    font-family: "Montserrat";
+    font-family: ${({ theme }) => theme.font.primary};
   }
 
   &:focus::placeholder {
@@ -59,16 +59,16 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-bottom: 2px solid hsla(176, 94%, 41%, 1);
+    border-bottom: 2px solid ${({ theme }) => theme.colors.blue};
   }
 
-  @media only screen and (min-width: 768px) {
+  ${({ theme }) => theme.media.desktop} {
     margin-top: 5em;
     font-size: 2.5em;
   }
 `;
 
-function Content(props) {
+const Content = props => {
   const handleSubmit = e => {
     e.preventDefault();
     props.onSubmit();
@@ -85,6 +85,6 @@ function Content(props) {
       </form>
     </StyledWrapper>
   );
-}
+};
 
 export default Content;

@@ -1,6 +1,9 @@
 import React from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
+import theme from "../utils/theme";
+import SEO from "../components/SEO";
+
 const GlobalStyle = createGlobalStyle`
 
 * {
@@ -10,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  font-family: "Montserrat";
+  font-family: ${({ theme }) => theme.font.primary};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
@@ -45,8 +48,13 @@ body {
 
 const Layout = ({ children }) => (
   <>
-    <GlobalStyle />
-    {children}
+    <SEO />
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyle />
+        {children}
+      </>
+    </ThemeProvider>
   </>
 );
 

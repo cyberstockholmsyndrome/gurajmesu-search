@@ -45,7 +45,7 @@ const ModalHeading = styled.h1`
   transform: translateX(50%);
   font-size: 3em;
 
-  @media only screen and (min-width: 768px) {
+  ${({ theme }) => theme.media.desktop} {
     font-size: 5em;
     top: 1.5em;
   }
@@ -54,7 +54,7 @@ const ModalHeading = styled.h1`
 const ModalText = styled.p`
   margin-top: 10em;
 
-  @media only screen and (min-width: 768px) {
+  ${({ theme }) => theme.media.desktop} {
     font-size: 2em;
     width: 75%;
     text-align: center;
