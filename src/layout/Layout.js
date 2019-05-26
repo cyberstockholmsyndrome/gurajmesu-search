@@ -18,6 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: white;
   text-align: center;
+  background-color: black;
 }
 
 .ReactModal__Overlay {

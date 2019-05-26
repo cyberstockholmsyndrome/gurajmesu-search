@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
-  width: 65%;
+  width: 100%;
+  min-height: 100vh;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -14,37 +18,41 @@ const StyledWrapper = styled.div`
 `;
 
 const Heading = styled.h1`
-  padding-top: 0.8em;
   font-size: 3.2em;
+  position: absolute;
+  top: 1em;
 
   ${({ theme }) => theme.media.desktop} {
-    padding-top: 3em;
-    font-size: 4.5em;
+    font-size: 5em;
+    top: 3em;
   }
 `;
 
 const Paragraph = styled.p`
-  padding-top: 2em;
-  font-size: 2em;
+  font-size: 2.2em;
+  position: absolute;
+  top: 7.5em;
 
   ${({ theme }) => theme.media.desktop} {
-    padding-top: 3em;
     font-size: 2.5em;
+    top: 12.5em;
   }
 `;
 
 const Input = styled.input`
   border: none;
   border-bottom: 2px solid hsl(0, 100%, 100%);
-  font-size: 1.6em;
+  font-size: 2em;
   color: hsl(0, 100%, 100%);
   font-family: ${({ theme }) => theme.font.primary};
   background-color: transparent;
-  margin-top: 3em;
   text-align: center;
-  padding-bottom: 0.2em;
-  margin-bottom: 2em;
-  width: 100%;
+  width: 75%;
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 0.1em;
 
   &::placeholder {
     color: hsl(0, 100%, 100%);
@@ -63,15 +71,24 @@ const Input = styled.input`
   }
 
   ${({ theme }) => theme.media.desktop} {
-    margin-top: 5em;
     font-size: 2.5em;
+    bottom: 4.5em;
+    width: 30%;
   }
 `;
 
 const Content = props => {
+  const [value, setValue] = useState("");
+
   const handleSubmit = e => {
     e.preventDefault();
-    props.onSubmit();
+    props.onSubmit(value);
+
+    document.title = `Gurajmesu Search - ${value}`;
+  };
+
+  const handleChange = event => {
+    setValue(event.target.value);
   };
 
   return (
@@ -81,7 +98,12 @@ const Content = props => {
         Najlepsza wyszukiwarka tekstów utworów autorstwa Grimes.
       </Paragraph>
       <form onSubmit={handleSubmit}>
-        <Input type="text" placeholder="Tytuł utworu:" />
+        <Input
+          type="text"
+          placeholder="Tytuł utworu:"
+          value={value}
+          onChange={handleChange}
+        />
       </form>
     </StyledWrapper>
   );
