@@ -8,23 +8,9 @@ import Content from "../components/Content";
 ReactModal.setAppElement("#root");
 
 const StyledWrapper = styled.div`
-  background: url("https://i.imgur.com/SdXO5wk.png") no-repeat center
-    center/cover;
-  width: 100%;
-  min-height: 100vh;
-  filter: blur(4px);
-  position: relative;
-
-  ::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.6);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Icon = styled.span`
@@ -57,12 +43,10 @@ const ModalText = styled.p`
   padding-top: 10em;
   padding-bottom: 1em;
   white-space: pre-line;
+  text-align: center;
 
   ${({ theme }) => theme.media.desktop} {
     font-size: 2em;
-    width: 75%;
-    text-align: center;
-    display: inline-block;
     padding-top: 8em;
   }
 `;
@@ -126,7 +110,7 @@ const Container = () => {
     setTitle(value);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = value => {
     setShowModal(false);
     setTitle("");
     setLyrics("");
@@ -137,35 +121,33 @@ const Container = () => {
   const text = loading ? <Spinner /> : lyrics;
 
   return (
-    <>
-      <StyledWrapper>
-        <ReactModal
-          isOpen={showModal}
-          contentLabel="Song Text"
-          style={{
-            overlay: {
-              zIndex: "2",
-              backgroundColor: "hsla(0, 0%, 0%, 0.6) "
-            },
-            content: {
-              backgroundColor: "#61449C",
-              border: "none",
-              borderRadius: "36px"
-            }
-          }}
-          closeTimeoutMS={500}
-          onRequestClose={handleCloseModal}
-          shouldCloseOnOverlayClick={true}
-        >
-          <Icon onClick={handleCloseModal}>
-            <i className="fas fa-times" />
-          </Icon>
-          <ModalHeading>{title}</ModalHeading>
-          <ModalText>{text}</ModalText>
-        </ReactModal>
-      </StyledWrapper>
+    <StyledWrapper>
       <Content onSubmit={handleOpenModal} />
-    </>
+      <ReactModal
+        isOpen={showModal}
+        contentLabel="Song Text"
+        style={{
+          overlay: {
+            zIndex: "2",
+            backgroundColor: "hsla(0, 0%, 0%, 0.6) "
+          },
+          content: {
+            backgroundColor: "#F46286",
+            border: "none",
+            borderRadius: "36px"
+          }
+        }}
+        closeTimeoutMS={500}
+        onRequestClose={handleCloseModal}
+        shouldCloseOnOverlayClick={true}
+      >
+        <Icon onClick={handleCloseModal}>
+          <i className="fas fa-times" />
+        </Icon>
+        <ModalHeading>{title}</ModalHeading>
+        <ModalText>{text}</ModalText>
+      </ReactModal>
+    </StyledWrapper>
   );
 };
 

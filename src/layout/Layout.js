@@ -12,12 +12,41 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
 }
 
+html {
+  ::before {
+    content: "";
+    background: url(https://images3.alphacoders.com/630/630823.jpg) no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(4px);
+  }
+
+  ::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: ${({ theme }) => theme.font.primary};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
-  text-align: center;
+  color: #fff;
   background-color: black;
 }
 

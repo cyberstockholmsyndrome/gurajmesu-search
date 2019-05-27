@@ -1,8 +1,7 @@
 const theme = {
   colors: {
     white: "white",
-    purple: "hsla(260, 39%, 44%, 1)",
-    blue: "hsla(176, 94%, 41%, 1)"
+    primary: "#F46286"
   },
   font: {
     primary: "'Montserrat', sans-serif"

@@ -2,40 +2,28 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 100%;
-  min-height: 100vh;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 `;
 
 const Heading = styled.h1`
   font-size: 3.2em;
-  position: absolute;
-  top: 1em;
+  margin-top: 1em;
 
   ${({ theme }) => theme.media.desktop} {
     font-size: 5em;
-    top: 3em;
+    margin-top: 2em;
   }
 `;
 
 const Paragraph = styled.p`
   font-size: 2.2em;
-  position: absolute;
-  top: 7.5em;
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 
   ${({ theme }) => theme.media.desktop} {
     font-size: 2.5em;
-    top: 12.5em;
+    margin-top: 3em;
   }
 `;
 
@@ -48,11 +36,9 @@ const Input = styled.input`
   background-color: transparent;
   text-align: center;
   width: 75%;
-  position: absolute;
-  bottom: 2em;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-bottom: 0.1em;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  padding-bottom: 3px;
 
   &::placeholder {
     color: hsl(0, 100%, 100%);
@@ -67,13 +53,13 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-bottom: 2px solid ${({ theme }) => theme.colors.blue};
+    border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
   }
 
   ${({ theme }) => theme.media.desktop} {
     font-size: 2.5em;
-    bottom: 4.5em;
-    width: 30%;
+    width: 40%;
+    margin-top: 4em;
   }
 `;
 
@@ -83,7 +69,7 @@ const Content = props => {
   const handleSubmit = e => {
     e.preventDefault();
     props.onSubmit(value);
-
+    setValue("");
     document.title = `Gurajmesu Search - ${value}`;
   };
 
