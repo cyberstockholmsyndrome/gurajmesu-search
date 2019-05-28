@@ -12,34 +12,8 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
 }
 
-html {
-  ::before {
-    content: "";
-    background: url(https://images3.alphacoders.com/630/630823.jpg) no-repeat center center fixed;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    filter: blur(4px);
-  }
-
-  ::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: rgba(0, 0, 0, 0.4);
-  }
-}
-
 html, body {
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
@@ -47,6 +21,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
+  background-image: url("https://images3.alphacoders.com/630/630823.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   background-color: black;
 }
 
