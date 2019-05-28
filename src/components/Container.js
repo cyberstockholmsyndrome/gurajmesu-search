@@ -12,6 +12,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+  position: relative;
 `;
 
 const Icon = styled.span`

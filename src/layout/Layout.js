@@ -21,12 +21,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
-  background-image: url("https://images3.alphacoders.com/630/630823.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
   background-color: black;
+
+  ::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: block;
+    background-image: url("https://images3.alphacoders.com/630/630823.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    filter: blur(4px) brightness(75%);
+  }
 }
 
 .ReactModal__Overlay {
