@@ -33,9 +33,6 @@ body {
     background-image: url("https://images3.alphacoders.com/630/630823.jpg");
     background-position: center center;
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     background-color: black;
     width: 100%;
