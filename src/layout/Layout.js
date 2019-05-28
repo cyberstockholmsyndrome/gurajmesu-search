@@ -27,12 +27,15 @@ body {
     content: "";
     position: fixed;
     left: 0;
-    right: 0;
+    top: 0;
     display: block;
+    z-index: -10;
     background-image: url("https://images3.alphacoders.com/630/630823.jpg");
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     background-color: black;
     width: 100%;
