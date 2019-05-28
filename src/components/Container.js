@@ -5,8 +5,6 @@ import axios from "axios";
 
 import Content from "../components/Content";
 
-ReactModal.setAppElement("#root");
-
 const StyledWrapper = styled.div`
   display: flex;
   align-items: center;
