@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -55,7 +56,9 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0 !important
+  width: 0 !important;
+  display: none;
+  overflow: hidden;
 }
 
 ::selection {

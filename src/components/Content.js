@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import "animate.css";
 
 const StyledWrapper = styled.div`
   text-align: center;
@@ -79,7 +80,7 @@ const Content = props => {
   };
 
   return (
-    <StyledWrapper>
+    <StyledWrapper className="animated bounceInRight slow">
       <Heading>Gurajmesu Search</Heading>
       <Paragraph>
         Najlepsza wyszukiwarka tekstów utworów autorstwa Grimes.
