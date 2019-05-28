@@ -58,7 +58,7 @@ const Spinner = styled.div`
   display: inline-block;
   width: 64px;
   height: 64px;
-  top: 20em;
+  top: 10em;
   right: 52%;
   transform: translateX(50%);
 
