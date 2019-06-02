@@ -1,12 +1,12 @@
 import React from "react";
 
-import Container from "../src/components/Container";
+import Index from "../src/components/Index";
 import Layout from "../src/layout/Layout";
 
 function App() {
   return (
     <Layout>
-      <Container />
+      <Index />
     </Layout>
   );
 }
