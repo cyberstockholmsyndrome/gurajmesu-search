@@ -31,7 +31,7 @@ body {
     top: 0;
     display: block;
     z-index: -10;
-    background-image: url("/public/images/grimes-bg.webp");
+    background-image: url("https://storage.googleapis.com/examplehtmlsandbox/grimes-bg.webp");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
