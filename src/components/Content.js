@@ -18,7 +18,7 @@ const Content = props => {
   };
 
   return (
-    <ContentWrapper className="animated bounceInRight slow">
+    <ContentWrapper className="">
       <Heading>Gurajmesu Search</Heading>
       <Paragraph>
         Najlepsza wyszukiwarka tekstów utworów autorstwa Grimes.
