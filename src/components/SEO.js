@@ -26,6 +26,8 @@ const SEO = () => (
     />
     <meta property="og:image:width" content="1920" />
     <meta property="og:image:height" content="1080" />
+    <link rel="dns-prefetch" href="fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="use.fontawesome.com" />
   </Helmet>
 );
 
