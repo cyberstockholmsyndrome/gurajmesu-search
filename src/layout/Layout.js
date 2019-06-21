@@ -31,7 +31,7 @@ body {
     top: 0;
     display: block;
     z-index: -10;
-    background-image: url("images/grimes-bg.webp");
+    background-image: url(${({ theme }) => theme.images.bg});
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
