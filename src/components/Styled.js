@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const IndexWrapper = styled.div`
+export const IndexWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,7 +82,7 @@ export const Spinner = styled.div`
   }
 `;
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled.section`
   text-align: center;
   position: relative;
 `;
