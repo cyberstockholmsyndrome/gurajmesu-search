@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import ReactModal from "react-modal";
-import axios from "axios";
 
 import Content from "./Content";
 import { IndexWrapper, Icon, ModalHeading, ModalText, Spinner } from "./Styled";
+
+import { getLyrics } from "../api/lyricsApi";
 
 const Index = () => {
   const [showModal, setShowModal] = useState(false);
@@ -11,25 +12,18 @@ const Index = () => {
   const [title, setTitle] = useState("");
   const [lyrics, setLyrics] = useState("");
 
-  const handleOpenModal = value => {
+  const handleOpenModal = async value => {
     setShowModal(true);
     setLoading(true);
-    axios
-      .get(`https://api.lyrics.ovh/v1/grimes/${value}`)
-      .then(res => res.data.lyrics)
-      .then(res => {
-        setLoading(false);
-        setLyrics(res);
-      })
-      .catch(error => {
-        setLoading(false);
-        setLyrics("Nie znaleziono utworu");
-      });
 
+    const response = await getLyrics(value);
+
+    setLoading(false);
+    setLyrics(response);
     setTitle(value);
   };
 
-  const handleCloseModal = value => {
+  const handleCloseModal = () => {
     setShowModal(false);
     setTitle("");
     setLyrics("");
